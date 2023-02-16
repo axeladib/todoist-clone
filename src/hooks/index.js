@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { firebase } from "../firebase.js";
-import { collatedTasksExist } from "../helpers/index.js";
+import { collatedTasksExist } from "../helpers";
 import moment from "moment/moment.js";
 
-export const useTask = (selectedProject) => {
+export const useTasks = (selectedProject) => {
   const [tasks, setTasks] = useState([]);
   const [archivedTasks, setArchivedTasks] = useState([]);
   //Do something
@@ -12,7 +12,7 @@ export const useTask = (selectedProject) => {
     let unsubscribe = firebase
       .firestore()
       .collection("tasks")
-      .where("userId", "==", "0PevLlbL3B3Jax29yaUeYoYJIiFiDU");
+      .where("userId", "==", 'jlIFXIwyAL3tzHMtzRbw');
 
     unsubscribe =
       selectedProject && !collatedTasksExist(selectedProject)
@@ -59,7 +59,7 @@ export const useProject = () => {
     firebase
       .firestore()
       .collection("projects")
-      .where("userId", "==", "0PevLlbL3B3Jax29yaUeYoYJIiFiDU")
+      .where("userId", "==", 'jlIFXIwyAL3tzHMtzRbw')
       .orderBy("projectId")
       .get()
       .then((snapshot) => {
