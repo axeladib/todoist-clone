@@ -128,6 +128,14 @@ $generic-bg: #db4c3f;
     @content;
   }
 }
+.darkmode{
+  header{
+    -webkit-bo-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+    box-shadow:  0 1px 3px 0 rgba(0,0,0,0.15);
+    background-color: #282828;
+    border-color: transparent;
+  }
+}
 
 ////////////////////////////////TODO:HEADER
 
@@ -150,6 +158,7 @@ header {
   nav {
     display: grid;
     -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
@@ -177,7 +186,7 @@ header {
         ul {
           float: right;
         }
-        ul,
+        
         li {
           @include va;
 
@@ -188,6 +197,35 @@ header {
           text-align: center;
           vertical-align: middle;
           float: left;
+
+          &:hover{
+            border-radius: 3px;
+            background-color:rgba(255,255,255,0.2);
+          }
+          &.settings__add{
+            margin-right: 15px;
+            font-size: 30px;
+            button{
+              @include transparent-button();
+              color: white;
+              cursor: pointer;
+            }
+          }
+          &.settings__darkmode{
+            button{
+              @include transparent-button();
+              color: white;
+              cursor: pointer;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+            }
+            svg{
+              width: 20px;
+              height: 20px;
+
+            }
+          }
         }
       }
     }
