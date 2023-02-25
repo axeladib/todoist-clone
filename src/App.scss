@@ -35,7 +35,7 @@ ul {
 // Variables
 $generic-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,
   rgba(0, 0, 0, 0.1) 0px 4px 11px;
-$generic-border: 1px solid #BDCDD6;
+$generic-border: 1px solid #bdcdd6;
 $generic-bg: #db4c3f;
 
 /* Mixins
@@ -253,175 +253,42 @@ header {
 
 /* Sidebar
   ============================================ */
-  .sidebar {
-    @include no-select();
-    width: 266px;
-    height: calc(100vh);
-    padding-top: 74px;
-    position: fixed;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    border-right: $generic-border;
-    background-color: #fafafa;
-  
-    @include mq('900px') {
-      // display: none;
-    }
-  
+.sidebar {
+  @include no-select();
+  width: 266px;
+  height: calc(100vh);
+  padding-top: 74px;
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border-right: $generic-border;
+  background-color: #fafafa;
+
+  @include mq("900px") {
+    // display: none;
+  }
+
+  &__generic {
     li {
-      &:hover .sidebar__project-delete {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-      }
-    }
-  
-    &__project {
-      cursor: pointer;
-  
-      div:nth-child(1) {
-        padding: 5px 0;
-        padding-left: 10px;
-        padding-right: 15px;
-        width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        flex-direction: column;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-      }
-  
-      &-delete {
-        margin-left: auto;
-        display: none;
-  
-        svg {
-          color: #cacaca;
-        }
-      }
-  
-      &.active, &:hover {
-        font-weight: bold;
-        background-color: white;
-      }
-  
-      &:nth-child(1) {
-        .sidebar__dot {
-          color: #6accbc;
-        }
-      }
-      &:nth-child(2) {
-        .sidebar__dot {
-          color: #fad003;
-        }
-      }
-      &:nth-child(3) {
-        .sidebar__dot {
-          color: #ff8d85;
-        }
-      }
-      &:nth-child(4) {
-        .sidebar__dot {
-          color: #ff9932;
-        }
-      }
-      &:nth-child(5) {
-        .sidebar__dot {
-          color: #af38eb;
-        }
-      }
-    }
-  
-    &__projects {
-      padding-left: 3px;
-    }
-  
-    &__project {
-      @include va('left');
-    }
-  
-    &__dot {
-      margin-right: 10px;
-      font-size: 30px;
-    }
-  
-    &__middle {
-      margin-top: 20px;
-      margin-bottom: 20px;
+      list-style-type: none;
+      color: #333;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      border-bottom: $generic-border;
-      padding-left: 10px;
+      margin-bottom: 0.5rem;
+      margin-left: 0.5rem;
       cursor: pointer;
-  
-      span {
-        color: #0000008a;
-        margin-right: 10px;
-  
-        svg.hidden-projects {
-          -webkit-transform: rotate(-90deg);
-                  transform: rotate(-90deg);
-        }
-      }
-  
-      h2 {
-        margin: 0;
-        color: #333;
-        font-size: 15px;
+      line-height: 1.5;
+      font-size: 15px;
+      padding-left: 0;
+      padding-right: 0;
+
+      &.active,
+      &:hover {
         font-weight: bold;
-        padding-bottom: 20px;
-      }
-    }
-  
-    &__generic {
-      li {
-        list-style-type: none;
-        color: #333;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        margin-bottom: 0.5rem;
-        margin-left: 0.5rem;
-        cursor: pointer;
-        line-height: 1.50;
-        font-size: 15px;
-        padding-left: 0;
-        padding-right: 0;
-  
-        div:nth-child(1) {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          padding: 10px 0 10px 10px;
-          width: 100%;
-  
-          span:first-of-type {
-            margin-right: 10px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-                -ms-flex-align: center;
-                    align-items: center;
-  
-            svg {
-              width: 18px;
-              height: 18px;
-              color: #555;
-            }
-          }
-        }
-  
-        &.active, &:hover {
-          font-weight: bold;
-          background-color: white;
-          transform: translateY(2px);
-        }
+        background-color: white;
+        transform: translateY(2px);
       }
     }
   }
-  
- 
+}
