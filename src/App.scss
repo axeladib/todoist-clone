@@ -287,6 +287,7 @@ header {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        flex-direction: column;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
@@ -382,6 +383,8 @@ header {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        margin-bottom: 0.5rem;
+        margin-left: 0.5rem;
         cursor: pointer;
         line-height: 1.50;
         font-size: 15px;

@@ -30,7 +30,7 @@ const Sidebar = () => {
         </li>
       </ul>
       <div>
-        <span>
+        <span >
           <FaChevronDown />
         </span>
         <h2>Projects</h2>
