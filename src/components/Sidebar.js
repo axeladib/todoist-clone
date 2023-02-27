@@ -30,12 +30,14 @@ export const Sidebar = () => {
         </li>
       </ul>
       <div className="sidebar__middle">
-        <span >
+        <span>
           <FaChevronDown />
         </span>
         <h2>Projects</h2>
-        <ul className="sidebar__projects">Projects will be here!</ul>
-        Add Project Component Here!!!
+        <ul className="sidebar__projects">
+          <li> Projects will be here!</li>
+          <li> Add Project Component Here!!!</li>
+        </ul>
       </div>
     </div>
   );

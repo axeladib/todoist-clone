@@ -253,42 +253,51 @@ header {
 
 /* Sidebar
   ============================================ */
-.sidebar {
-  @include no-select();
-  width: 266px;
-  height: calc(100vh);
-  padding-top: 74px;
-  position: fixed;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  border-right: $generic-border;
-  background-color: #fafafa;
-
-  @include mq("900px") {
-    // display: none;
-  }
-  &__middle {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    border-bottom: $generic-border;
-    padding-left: 10px;
-    cursor: pointer;
-
-    span {
-      color: #0000008a;
-      margin-right: 10px;
-
-      svg.hidden-projects {
-        -webkit-transform: rotate(-90deg);
-        transform: rotate(-90deg);
+  .sidebar {
+    @include no-select();
+    width: 266px;
+    height: calc(100vh);
+    padding-top: 74px;
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-right: $generic-border;
+    background-color: #fafafa;
+  
+    @include mq('900px') {
+      // display: none;
+    }
+  
+  
+    &__middle {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      border-bottom: $generic-border;
+      padding-left: 10px;
+      cursor: pointer;
+  
+      span {
+        color: #0000008a;
+        margin-right: 10px;
+  
+        svg.hidden-projects {
+          -webkit-transform: rotate(-90deg);
+                  transform: rotate(-90deg);
+        }
+      }
+  
+      h2 {
+        margin: 0;
+        color: #333;
+        font-size: 15px;
+        font-weight: bold;
+        padding-bottom: 20px;
       }
     }
-  }
-
-  &.__generic {
+  &__generic {
     li {
       list-style-type: none;
       color: #333;
@@ -302,6 +311,9 @@ header {
       font-size: 15px;
       padding-left: 0;
       padding-right: 0;
+      span{
+        margin-right: 0.5rem;
+      }
 
       &.active,
       &:hover {
@@ -309,6 +321,20 @@ header {
         background-color: white;
         transform: translateY(2px);
       }
+    }
+  }
+  &__projects{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-left: -3.5rem;
+
+    li{
+      margin-bottom: 0.2rem;
+      line-height: 1rem;
+      letter-spacing: 0.1rem;
     }
   }
 }
