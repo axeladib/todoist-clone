@@ -267,8 +267,28 @@ header {
   @include mq("900px") {
     // display: none;
   }
+  &__middle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: $generic-border;
+    padding-left: 10px;
+    cursor: pointer;
 
-  &__generic {
+    span {
+      color: #0000008a;
+      margin-right: 10px;
+
+      svg.hidden-projects {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  &.__generic {
     li {
       list-style-type: none;
       color: #333;
