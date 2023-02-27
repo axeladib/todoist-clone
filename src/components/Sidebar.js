@@ -6,7 +6,7 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 
-const Sidebar = () => {
+export const Sidebar = () => {
   return (
     <div className="sidebar" data-testid="sidebar">
       <ul className="sidebar__generic">
@@ -40,5 +40,3 @@ const Sidebar = () => {
     </div>
   );
 };
-
-export default Sidebar;

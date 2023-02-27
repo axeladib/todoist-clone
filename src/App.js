@@ -1,18 +1,19 @@
 import React from "react";
 import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import { ProjectsProvider, SelectedProjectProvider } from "./context";
+import { Content } from "./components/Content";
+import { SelectedProjectProvider, ProjectsProvider } from "./context";
+
 import "./App.scss";
 
 export const App = () => {
   return (
-    // <SelectedProjectProvider>
-    //   <ProjectsProvider>
+    <SelectedProjectProvider>
+      <ProjectsProvider>
         <div className="app">
+          <Content />
           <Header />
-          <Sidebar />
         </div>
-    //   {/* </ProjectsProvider>
-    // </SelectedProjectProvider> */}nnnnnnnnnnnnnnnnnnnnn 
+      </ProjectsProvider>
+    </SelectedProjectProvider>
   );
 };
