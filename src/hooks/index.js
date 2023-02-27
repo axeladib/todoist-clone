@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { firebase } from "../firebase.js";
+import { firebase } from "../firebase";
 import { collatedTasksExist } from "../helpers";
 import moment from "moment/moment.js";
 
@@ -12,7 +12,7 @@ export const useTasks = (selectedProject) => {
     let unsubscribe = firebase
       .firestore()
       .collection("tasks")
-      .where("userId", "==", 'jlIFXIwyAL3tzHMtzRbw');
+      .where("userId", "==", "jlIFXIwyAL3tzHMtzRbw");
 
     unsubscribe =
       selectedProject && !collatedTasksExist(selectedProject)
@@ -35,7 +35,7 @@ export const useTasks = (selectedProject) => {
 
       setTasks(
         selectedProject === "NEXT_7"
-          ? newTasks.fitler(
+          ? newTasks.filter(
               (task) =>
                 moment(task.date, "DD-MM-YYYY").diff(moment(), "days") <= 7 &&
                 task.archived !== true
@@ -59,7 +59,7 @@ export const useProject = () => {
     firebase
       .firestore()
       .collection("projects")
-      .where("userId", "==", 'jlIFXIwyAL3tzHMtzRbw')
+      .where("userId", "==", "jlIFXIwyAL3tzHMtzRbw")
       .orderBy("projectId")
       .get()
       .then((snapshot) => {
