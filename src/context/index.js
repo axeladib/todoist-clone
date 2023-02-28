@@ -2,13 +2,13 @@ import {
   ProjectsContext,
   ProjectsProvider,
   useProjectsValue,
-} from './projects-context';
+} from './project-context';
 
 import {
   SelectedProjectContext,
   SelectedProjectProvider,
   useSelectedProjectValue,
-} from './selected-project-context';
+} from './selected-projects-context';
 
 export {
   ProjectsContext,
